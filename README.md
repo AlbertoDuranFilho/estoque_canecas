@@ -76,8 +76,8 @@ class ProductRepository {
   + register(product: number) void
   + update(product: Product) void
   + delete(id: number) void
-  + by(id: number, amount: number): void
-  + sell(id: number, amount: number): void
+  + by(id: number, amount: number) void
+  + sell(id: number, amount: number) void
 }
 
 class ProductController {
