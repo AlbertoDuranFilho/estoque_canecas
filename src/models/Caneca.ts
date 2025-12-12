@@ -34,7 +34,7 @@ export class Caneca extends Produto{
     }
     public removerDoEstoque(quantidade: number): boolean{
         if(this.quantidade < quantidade){
-            console.log(`Quantidade no estoque insuficiente!`)
+            console.log(`\nQuantidade no estoque insuficiente!`)
             return false;
         }
 
