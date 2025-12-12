@@ -1,6 +1,6 @@
-import { Produto } from "./Produto";
+import { Product } from "./Product";
 
-export class Caneca extends Produto{
+export class Mug extends Product{
 
     //Atributos da Classe Caneca
     private _weight: number;
@@ -28,22 +28,6 @@ export class Caneca extends Produto{
 
     public set model(model: number){
         this._model = model;
-    }
-
-    //Método para adicionar a quantidade de canecas no estoque
-    public addStock(amount: number): void{
-        this.amount += amount;
-    }
-
-    //Método para remover a quantidade de canecas no estoque
-    public removeStock(amount: number): boolean{
-        if(this.amount < amount){
-            console.log(`\nQuantidade no estoque insuficiente!`)
-            return false;
-        }
-
-        this.amount = this.amount - amount;
-        return true;
     }
 
     // Método para visualizar as informações da Caneca

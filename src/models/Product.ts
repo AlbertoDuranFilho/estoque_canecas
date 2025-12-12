@@ -1,4 +1,4 @@
-export abstract class Produto{
+export abstract class Product{
 
     //Atributos da classe Produto
     private _id: number;
@@ -42,7 +42,23 @@ export abstract class Produto{
         return this._amount;
     }
     public set amount(amount: number){
-        this.amount = amount;
+        this._amount = amount;
+    }
+
+    //Método para adicionar a quantidade de canecas no estoque
+    public addStock(amount: number): void{
+        this._amount += amount;
+    }
+
+    //Método para remover a quantidade de canecas no estoque
+    public removeStock(amount: number): boolean{
+        if(this.amount < amount){
+            console.log(`\nQuantidade no estoque insuficiente!`)
+            return false;
+        }
+
+        this.amount = this.amount - amount;
+        return true;
     }
 
     //Método para visualizar os produtos
@@ -52,7 +68,7 @@ export abstract class Produto{
         console.log(`****************************************************`);
         console.log(`ID da produto: ${this._id}`);
         console.log(`Nome: ${this._name}`);
-        console.log(`Preço: ${this._price.toFixed(2)}`);
+        console.log(`Preço: R$${this._price.toFixed(2)}`);
         console.log(`Quantidade em estoque: ${this._amount}`);
     }
 }
