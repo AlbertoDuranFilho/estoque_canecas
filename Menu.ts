@@ -8,7 +8,13 @@ export function main() {
     let opcao: number;
 
     let caneca1: Caneca = new Caneca(1, "Caneca Star Wars", 70.00, 5, 3, 2); 
-    caneca1.visualizar()
+    caneca1.visualizar();
+    caneca1.adicionarNoEstoque(5);
+    caneca1.visualizar();
+    caneca1.removerDoEstoque(20);
+    caneca1.visualizar();
+    caneca1.removerDoEstoque(3);
+    caneca1.visualizar();
 
     while(true){
     console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************\n");
