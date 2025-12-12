@@ -64,9 +64,9 @@ ts-node Menu.ts
 
 ---
 
-### 🧾 Estrutura sugerida do projeto
-.
-├── src/
+### 📂 Estrutura do projeto
+```bash
+├── src
 │   ├── util/
 │   │   └── Colors.ts           
 │   └── Menu.ts
@@ -74,7 +74,7 @@ ts-node Menu.ts
 ├── tsconfig.json
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ### 📌 Observações
