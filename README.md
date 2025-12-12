@@ -70,11 +70,13 @@ ts-node Menu.ts
 ├── src
 │   ├── util
 │   │   └── Colors.ts 
+│   ├── controller
+│   │   └── ProductController.ts 
 │   ├── repository  
-│   │   └── ProdutoRepository.ts        
+│   │   └── ProductRepository.ts        
 │   ├── models
-│   │   ├── Caneca.ts 
-│   │   └── Produto.ts           
+│   │   ├── Mug.ts 
+│   │   └── Product.ts           
 │   └── Menu.ts
 ├── package.json
 ├── tsconfig.json
