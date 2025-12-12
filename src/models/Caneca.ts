@@ -2,62 +2,66 @@ import { Produto } from "./Produto";
 
 export class Caneca extends Produto{
 
-    private _peso: number;
-    private _modelo: number;
+    //Atributos da Classe Caneca
+    private _weight: number;
+    private _model: number;
 
-    constructor(id: number, nome: string, preco: number, quantidade: number, peso: number, modelo: number){
-        super(id, nome, preco, quantidade);
-        this._peso = peso;
-        this._modelo = modelo;
+    constructor(id: number, name: string, price: number, amount: number, weight: number, model: number){
+        super(id, name, price, amount);
+        this._weight = weight;
+        this._model = model;
     }
 
     // Get e Set do peso
-    public get peso(): number{
-        return this._peso;
+    public get weight(): number{
+        return this._weight;
     }
 
-    public set peso(peso: number){
-        this._peso = peso;
+    public set weight(weight: number){
+        this._weight = weight;
     }
 
     // Get e Set do modelo
-    public get modelo(): number{
-        return this._modelo;
+    public get model(): number{
+        return this._model;
     }
 
-    public set modelo(modelo: number){
-        this._modelo = modelo;
+    public set model(model: number){
+        this._model = model;
     }
 
-    public adicionarNoEstoque(quantidade: number): void{
-        this.quantidade += quantidade;
+    //Método para adicionar a quantidade de canecas no estoque
+    public addStock(amount: number): void{
+        this.amount += amount;
     }
-    public removerDoEstoque(quantidade: number): boolean{
-        if(this.quantidade < quantidade){
+
+    //Método para remover a quantidade de canecas no estoque
+    public removeStock(amount: number): boolean{
+        if(this.amount < amount){
             console.log(`\nQuantidade no estoque insuficiente!`)
             return false;
         }
 
-        this.quantidade = this.quantidade - quantidade;
+        this.amount = this.amount - amount;
         return true;
     }
 
-    public visualizar(): void {
-        let modelo = "";
+    // Método para visualizar as informações da Caneca
+    public view(): void {
+        let model = "";
         
-        switch(this.modelo){
+        switch(this._model){
             case 1:
-                modelo = "Comum"
+                model = "Comum"
                 break;
-                case 2:
-                    modelo = "Caneca 3D"
-                    break;
+            case 2:
+                model = "Caneca 3D"
+                break;
         }
 
-        super.visualizar()
-        console.log(`Peso da caneca: ${this._peso}kg`);
-        console.log(`Modelo da caneca: ${modelo}`);
-
+        super.view()
+        console.log(`Peso da caneca: ${this._weight}kg`);
+        console.log(`Modelo da caneca: ${model}`);
         
     }
     

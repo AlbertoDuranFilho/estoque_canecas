@@ -1,14 +1,16 @@
 export abstract class Produto{
-    private _id: number;
-    private _nome: string;
-    private _preco: number;
-    private _quantidade: number;
 
-    constructor(id: number, nome: string, preco: number, quantidade: number){
+    //Atributos da classe Produto
+    private _id: number;
+    private _name: string;
+    private _price: number;
+    private _amount: number;
+
+    constructor(id: number, name: string, price: number, amount: number){
         this._id = id;
-        this._nome = nome;
-        this._preco = preco;
-        this._quantidade = quantidade;
+        this._name = name;
+        this._price = price;
+        this._amount = amount;
     }
 
     // Get e Set do ID
@@ -20,37 +22,37 @@ export abstract class Produto{
     }
 
     // Get e Set do nome
-    public get nome(): string{
-        return this._nome;
+    public get name(): string{
+        return this._name;
     }
-    public set nome(nome: string){
-        this._nome = nome;
+    public set name(name: string){
+        this._name = name;
     }
 
     // Get e Set do preço
-    public get preco(): number{
-        return this._preco;
+    public get price(): number{
+        return this._price;
     }
-    public set preco(preco: number){
-        this._preco = preco;
+    public set price(price: number){
+        this._price = price;
     }
 
     //Get e set da quantidade
-    public get quantidade(): number{
-        return this._quantidade;
+    public get amount(): number{
+        return this._amount;
     }
-    public set quantidade(quantidade: number){
-        this._quantidade = quantidade;
+    public set amount(amount: number){
+        this.amount = amount;
     }
 
-    //Método Específico
-    public visualizar(): void{
+    //Método para visualizar os produtos
+    public view(): void{
         console.log(`\n\n****************************************************`);
-       console.log(`Dados do Produto:`)
-       console.log(`****************************************************`);
-       console.log(`ID da produto: ${this._id}`)
-       console.log(`Nome: ${this.nome}`)
-       console.log(`Preço: ${this._preco.toFixed(2)}`)
-       console.log(`Quantidade em estoque: ${this._quantidade}`)
+        console.log(`Dados do Produto:`);
+        console.log(`****************************************************`);
+        console.log(`ID da produto: ${this._id}`);
+        console.log(`Nome: ${this._name}`);
+        console.log(`Preço: ${this._price.toFixed(2)}`);
+        console.log(`Quantidade em estoque: ${this._amount}`);
     }
 }

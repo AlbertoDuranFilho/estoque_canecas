@@ -5,17 +5,20 @@ import { Caneca } from "./src/models/Caneca";
 
 export function main() {
 
-    let opcao: number;
+    // Variáveis
+    let option: number;
 
+    // Teste da classe Caneca
     let caneca1: Caneca = new Caneca(1, "Caneca Star Wars", 70.00, 5, 3, 2); 
-    caneca1.visualizar();
-    caneca1.adicionarNoEstoque(5);
-    caneca1.visualizar();
-    caneca1.removerDoEstoque(20);
-    caneca1.visualizar();
-    caneca1.removerDoEstoque(3);
-    caneca1.visualizar();
+    caneca1.view();
+    caneca1.addStock(5);
+    caneca1.view();
+    caneca1.removeStock(20);
+    caneca1.view();
+    caneca1.removeStock(3);
+    caneca1.view();
 
+    //Laço de repetição para o Menu
     while(true){
     console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************\n");
     
@@ -33,15 +36,17 @@ export function main() {
     
     console.log("\n*****************************************************", colors.reset);
     
-    opcao = prompt.questionInt("Entre com a opcao desejada: ")
+    // Opção escolhida pelo usuário
+    option = prompt.questionInt("Entre com a opcao desejada: ")
 
-    if(opcao == 7) {
+    // Case a opção digitada seja 7, irá finalizar o programa
+    if(option == 7) {
         console.log(colors.fg.greenstrong, "\nLOJÃO DA CANECA - Encontre a caneca que você procura!");
-        finalizar()
+        finish()
         console.log(colors.reset, "");
         process.exit()
     }
-        switch(opcao){
+        switch(option){
             // Adicionar novo produto
             case 1:
                 console.log(colors.fg.whitestrong,"\n\nAdicionar nova caneca\n\n", colors.reset);
@@ -89,8 +94,8 @@ export function main() {
 
 } 
 
-
-export function finalizar(): void{
+// Função que mostra as informações do desenvolvedor assim que o programa é finalizado
+export function finish(): void{
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
     console.log("Alberto Duran - Generation Brasil");
@@ -98,10 +103,12 @@ export function finalizar(): void{
     console.log("*****************************************************");
 }
 
+// Função para pausar a execução até que o usuário pressione enter
 function keyPress(): void {
     console.log(colors.reset, "");
     console.log("Pressione enter para continuar...");
     prompt.prompt();
 }
 
+// Executa a função main
 main();
