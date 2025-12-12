@@ -1,4 +1,4 @@
-### Lojão das Canecas 🍵 — Controle de Estoque (TypeScript + POO)
+## Lojão das Canecas 🍵 — Controle de Estoque (TypeScript + POO)
 
 Projeto desenvolvido durante o programa **Generation Brasil**, com foco em **TypeScript**, **Programação Orientada a Objetos (POO)** e uma aplicação executada **no terminal**.
 
@@ -6,7 +6,7 @@ O sistema simula um **controle de estoque de canecas**, com um **menu colorido**
 
 ---
 
-### ✅ Funcionalidades (CRUD)
+## ✅ Funcionalidades (CRUD)
 
 - ➕ **Cadastrar** caneca
 - 📋 **Listar** todas as canecas
@@ -18,7 +18,7 @@ O sistema simula um **controle de estoque de canecas**, com um **menu colorido**
 
 ---
 
-### 🧠 Conceitos praticados
+## 🧠 Conceitos praticados
 
 - Programação Orientada a Objetos (**classes**, **métodos**, **encapsulamento**, **interfaces**, **polimorfismo**)
 - Tipagem e boas práticas com **TypeScript**
@@ -27,16 +27,76 @@ O sistema simula um **controle de estoque de canecas**, com um **menu colorido**
 
 ---
 
-### 🛠 Tecnologias e Ferramentas
+## 🛠 Tecnologias e Ferramentas
 
 - **Node.js**
 - **TypeScript**
 - **readline-sync**
 - Git & GitHub
 
----
+## 🧱 Arquitetura do projeto
 
-### ▶️ Como executar o projeto
+### Diagrama UML
+```mermaid
+classDiagram
+
+class Product {
+  <<Abstract>>
+  - id : number
+  - name : string
+  - price : number
+  - amount : number
+  + get id() number
+  + get name() string
+  + get price() number
+  + get amount() number
+  + set id(id: number) void
+  + set name(name: string) void
+  + set price(price: number) void
+  + set amount(amount: number) void
+  + addStock(amount: number): void
+  + removeStock(amount: number): boolean
+  + view() void
+}
+
+class Mug {
+  - weight : number
+  - model : number
+  + get weight() number
+  + get model() number
+  + set weight(weight: number) void
+  + set model(model: number) void
+  + view() void
+}
+
+class ProductRepository {
+  <<Interface>>
+  + searchById(id: Product) void
+  + listAll() void
+  + register(product: number) void
+  + update(product: Product) void
+  + delete(id: number) void
+}
+
+class ProductController {
+  - listProduct : Product[]
+  + register(product: Product) void
+  + listAll() void
+  + searchById(id: number) void
+  + update(product: Product) void
+  + delete(id: number) void
+  + sell(id: number, amount: number) void
+  + buy(id: number, amount: number) void
+  + generateId() number
+  + searchInArray(id: number) Product
+}
+
+Product <|-- Mug
+Product <.. ProductRepository
+ProductRepository <|.. ProductController
+```
+
+## ▶️ Como executar o projeto
 
 #### Pré-requisitos
 - Node.js instalado
@@ -65,7 +125,7 @@ ts-node Menu.ts
 
 ---
 
-### 📂 Estrutura do projeto
+## 📂 Estrutura do projeto
 ```bash
 ├── src
 │   ├── util
@@ -85,7 +145,7 @@ ts-node Menu.ts
 ```
 ---
 
-### 📌 Observações
+## 📌 Observações
 - Projeto executado 100% no terminal
 - Dados armazenados em memória durante a execução (sem banco de dados), ideal para praticar lógica e POO
 
