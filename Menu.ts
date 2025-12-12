@@ -1,10 +1,14 @@
 import prompt = require("readline-sync");
 import process = require('node:process');
 import { colors } from './src/util/Colors';
+import { Caneca } from "./src/models/Caneca";
 
 export function main() {
 
     let opcao: number;
+
+    let caneca1: Caneca = new Caneca(1, "Caneca Star Wars", 70.00, 5, 3, 2); 
+    caneca1.visualizar()
 
     while(true){
     console.log(colors.bg.black, colors.fg.yellow,"\n*****************************************************\n");
@@ -18,13 +22,14 @@ export function main() {
     console.log("3 - Buscar caneca por ID");
     console.log("4 - Atualizar informações da caneca");
     console.log("5 - Excluir Caneca");
-    console.log("6 - Sair");
+    console.log("6 - Comprar Caneca");
+    console.log("7 - Sair");
     
     console.log("\n*****************************************************", colors.reset);
     
     opcao = prompt.questionInt("Entre com a opcao desejada: ")
 
-    if(opcao == 6) {
+    if(opcao == 7) {
         console.log(colors.fg.greenstrong, "\nLOJÃO DA CANECA - Encontre a caneca que você procura!");
         finalizar()
         console.log(colors.reset, "");
@@ -58,7 +63,13 @@ export function main() {
 
             // Excluir produto por ID
             case 5:
-                console.log(colors.fg.whitestrong,"\n\Excluir uma caneca\n\n", colors.reset);
+                console.log(colors.fg.whitestrong,"\n\nExcluir uma caneca\n\n", colors.reset);
+                keyPress()
+                break;
+
+            //Comprar Caneca
+            case 6:
+                console.log(colors.fg.whitestrong,"\n\nComprar caneca\n\n", colors.reset);
                 keyPress()
                 break;
 
