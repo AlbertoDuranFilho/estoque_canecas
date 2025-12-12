@@ -13,13 +13,14 @@ O sistema simula um **controle de estoque de canecas**, com um **menu colorido**
 - 🔎 **Listar por ID**
 - ✏️ **Atualizar** caneca
 - 🗑️ **Deletar** caneca
+- 🎁 **Comprar** caneca
 - 🚪 **Sair** do sistema
 
 ---
 
 ### 🧠 Conceitos praticados
 
-- Programação Orientada a Objetos (**classes**, **métodos**, **encapsulamento**)
+- Programação Orientada a Objetos (**classes**, **métodos**, **encapsulamento**, **interfaces**, **polimorfismo**)
 - Tipagem e boas práticas com **TypeScript**
 - Entrada e saída de dados no terminal usando **readline-sync**
 - Organização do código por pastas (model / menu / repository ou service)
@@ -67,8 +68,13 @@ ts-node Menu.ts
 ### 📂 Estrutura do projeto
 ```bash
 ├── src
-│   ├── util/
-│   │   └── Colors.ts           
+│   ├── util
+│   │   └── Colors.ts 
+│   ├── repository  
+│   │   └── ProdutoRepository.ts        
+│   ├── models
+│   │   ├── Caneca.ts 
+│   │   └── Produto.ts           
 │   └── Menu.ts
 ├── package.json
 ├── tsconfig.json
